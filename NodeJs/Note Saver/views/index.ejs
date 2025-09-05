@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+</head>
+<body>
+    <div >
+        <form action="/create" method="post" class="input-container" >
+            <div class="input">
+                <form action="/create">
+                    <input type="text" class="input-title" placeholder="Enter your title " name="title">
+                    <textarea name="details" id="" placeholder="Create note " ></textarea>
+                    <a href=""><button id="submit-btn" > Submit</button></a>
+                </form>
+                
+            </div>
+        </form>
+        
+    </div>
+    <div class="card-container">
+        <% if (files.length > 0) { %>
+            <% files.forEach(function(file) { %>
+                <div class="card">
+                    <h1><%= file %></h1> 
+                    <a href="/files/<%= file %>">Read more</a>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <h1>No files found</h1>
+        <% } %>
+    </div>
+
+
+    <script src="/Javascript/scripts.js"></script>
+</body>
+</html>
